@@ -6,7 +6,7 @@ export default (name, path) => {
 
 	downloadRepo(name, path, (err) => {
 		if (err) {
-			spinner.succeed('下载失败');
+			spinner.fail('下载失败');
 			console.error(err);
 		} else {
 			spinner.succeed('下载完成');
