@@ -9,19 +9,14 @@ export default async (name, options) => {
 			type: 'list',
 			name: 'template',
 			message: '请选择你要使用的模版？',
-			choices: ['admin', 'mobile', 'node'],
+			choices: [
+				'gulp-template',
+				'vue-antd-admin',
+				'nuxt2-mobile-template',
+				'vite-vue-template',
+			],
 		},
 	]);
 
-	switch (template) {
-		case 'admin':
-			download('VSirrr/vue-antd-admin', `${basePath}/${name}`);
-			break;
-		case 'mobile':
-			download('VSirrr/vue-antd-admin', `${basePath}/${name}`);
-			break;
-		case 'node':
-			download('VSirrr/vue-antd-admin', `${basePath}/${name}`);
-			break;
-	}
+	download(`VSirrr/${template}`, `${basePath}/${name}`);
 };
